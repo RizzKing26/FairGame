@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FairGame | Find What's In Season</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="home">
+    <div class="paper-bg"></div>
+    <header class="site-header">
+      <div class="logo-wrap">
+        <span class="logo-mark" aria-hidden="true">🦌</span>
+        <div>
+          <h1>FairGame</h1>
+          <p>Find what's in season right now</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero-strip">
+        <h2>Plan Smarter. Hunt in Season.</h2>
+      </section>
+
+      <section class="section-block">
+        <div class="section-title-wrap">
+          <h3>By Animal</h3>
+          <a href="choose.html?mode=animal" class="text-link">See all animals</a>
+        </div>
+        <p class="helper-text">Hover to pause the row. Click an animal to choose a state.</p>
+        <div class="animal-scroll-shell">
+          <div id="animal-scroll-track" class="animal-scroll-track"></div>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-title-wrap">
+          <h3>By Location</h3>
+          <a href="choose.html?mode=state" class="text-link">See all states</a>
+        </div>
+        <p class="helper-text">Pick a top hunting state or open all U.S. states with +.</p>
+        <div id="top-states-row" class="top-states-row"></div>
+      </section>
+    </main>
+
+    <dialog id="all-states-dialog" class="state-dialog">
+      <div class="dialog-head">
+        <h4>All U.S. States</h4>
+        <button id="close-states-dialog" class="ghost-btn" aria-label="Close">✕</button>
+      </div>
+      <div id="all-states-grid" class="all-states-grid"></div>
+    </dialog>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
