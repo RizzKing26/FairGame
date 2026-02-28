@@ -4,31 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FairGame | Find What's In Season</title>
+
+    <!-- Fonts for vintage serif headings + readable body -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="home">
-    <div class="paper-bg" aria-hidden="true"></div>
+    <!-- textured outer frame -->
+    <div class="outer-frame" aria-hidden="true"></div>
+
     <header class="site-header">
-      <div class="logo-wrap">
-        <span class="logo-mark" aria-hidden="true">🦌</span>
-        <div>
-          <h1>FairGame</h1>
-          <p>Find what's in season right now</p>
+      <div class="top-bar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">🦌</span>
+          <div class="brand-copy">
+            <div class="site-name">FairGame<span class="dot">.io</span></div>
+            <div class="site-tag">Find what's in season right now</div>
+          </div>
         </div>
+      </div>
+      <!-- chalk stripe hero (keeps semantic header area) -->
+      <div class="hero-band">
+        <h1 class="hero-title">Find What's In Season Right Now</h1>
       </div>
     </header>
 
     <main class="container">
-      <section class="hero-strip">
-        <h2>Plan Smarter. Hunt in Season.</h2>
-      </section>
-
       <section class="section-block">
         <div class="section-title-wrap">
           <h3>By Animal</h3>
           <a href="choose.html?mode=animal" class="text-link">See all animals</a>
         </div>
         <p class="helper-text">Hover to pause the row. Click an animal to choose a state.</p>
+
+        <!-- Your JS populates #animal-scroll-track. The CSS below styles cards with .polaroid or .animal-card classes. -->
         <div class="animal-scroll-shell">
           <div id="animal-scroll-track" class="animal-scroll-track"></div>
         </div>
@@ -40,6 +51,7 @@
           <a href="choose.html?mode=state" class="text-link">See all states</a>
         </div>
         <p class="helper-text">Pick a top hunting state or open all U.S. states with +.</p>
+
         <div id="top-states-row" class="top-states-row"></div>
       </section>
     </main>
