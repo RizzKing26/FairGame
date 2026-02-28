@@ -6,84 +6,68 @@
     <title>Hunting Season Lookup</title>
     <style>
         body {
+            background-color: #d2691e; /* Terracotta */
+            font-family: Arial, sans-serif;
             margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #C45C37; /* Dark terracotta */
-            color: #f0f0f0;
+            padding: 0;
         }
         header {
-            background-color: #333;
-            padding: 20px;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
             text-align: center;
-        }
-        header img {
-            width: 100px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         .hero {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 60px 20px;
             text-align: center;
+            padding: 50px 20px;
         }
-        .hero h1 {
-            font-size: 2.5rem;
-        }
-        .polaroids {
+        .animal-cards {
             display: flex;
             overflow-x: auto;
             padding: 20px;
         }
-        .polaroid {
-            background: white;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            padding: 10px;
-            margin: 0 10px;
-            width: 150px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            flex-shrink: 0;
-        }
-        .state-tile {
-            background: white;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px;
-            text-align: center;
-            display: inline-block;
+        .animal-card {
             width: 200px;
+            margin: 0 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            overflow: hidden;
+            background: white;
         }
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            .polaroid {
-                width: 120px;
-            }
-            .state-tile {
-                width: 150px;
-            }
+        .state-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+        .state-card {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Hunting Logo">
+        <h1>Hunting Season Lookup</h1>
     </header>
-    <div class="hero">
-        <h1>Welcome to the Hunting Season Lookup</h1>
-        <p>Your go-to resource for hunting seasons, regulations, and tips!</p>
-    </div>
-    <section class="polaroids">
-        <div class="polaroid"><img src="deer.jpg" alt="Deer"><p>Deer</p></div>
-        <div class="polaroid"><img src="moose.jpg" alt="Moose"><p>Moose</p></div>
-        <div class="polaroid"><img src="elk.jpg" alt="Elk"><p>Elk</p></div>
-        <div class="polaroid"><img src="bear.jpg" alt="Bear"><p>Bear</p></div>
+    <section class="hero">
+        <h2>Find Your Best Hunting Season</h2>
     </section>
-    <section class="states">
-        <div class="state-tile">Texas</div>
-        <div class="state-tile">Colorado</div>
-        <div class="state-tile">Wyoming</div>
+    <section class="animal-cards">
+        <div class="animal-card">Animal 1</div>
+        <div class="animal-card">Animal 2</div>
+        <div class="animal-card">Animal 3</div>
+        <!-- Additional Animal Cards -->
+    </section>
+    <section class="state-grid">
+        <div class="state-card">State 1</div>
+        <div class="state-card">State 2</div>
+        <div class="state-card">State 3</div>
+        <!-- Additional State Cards -->
     </section>
 </body>
 </html>
