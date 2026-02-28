@@ -1,87 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FairGame | Find What's In Season</title>
-
-    <!-- Fonts for vintage serif headings + readable body -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body data-page="home">
-    <!-- textured outer frame -->
-    <div class="outer-frame" aria-hidden="true"></div>
-
-    <header class="site-header">
-      <div class="top-bar">
-        <div class="brand">
-          <span class="brand-mark" aria-hidden="true">🦌</span>
-          <div class="brand-copy">
-            <div class="site-name">FairGame<span class="dot">.io</span></div>
-            <div class="site-tag">Find what's in season right now</div>
-          </div>
-        </div>
-      </div>
-      <!-- chalk stripe hero (keeps semantic header area) -->
-      <div class="hero-band">
-        <h1 class="hero-title">Find What's In Season Right Now</h1>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunting Season Lookup</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #C45C37; /* Dark terracotta */
+            color: #f0f0f0;
+        }
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            width: 100px;
+        }
+        .hero {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+        .polaroids {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px;
+        }
+        .polaroid {
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 0 10px;
+            width: 150px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+        }
+        .state-tile {
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            display: inline-block;
+            width: 200px;
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .polaroid {
+                width: 120px;
+            }
+            .state-tile {
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Hunting Logo">
     </header>
-
-    <main class="container">
-      <section class="section-block">
-        <div class="section-title-wrap">
-          <h3>By Animal</h3>
-          <a href="choose.html?mode=animal" class="text-link">See all animals</a>
-        </div>
-        <p class="helper-text">Hover to pause the row. Click an animal to choose a state.</p>
-
-        <!-- Your JS populates #animal-scroll-track. The CSS below styles cards with .polaroid or .animal-card classes. -->
-        <div class="animal-scroll-shell">
-          <div id="animal-scroll-track" class="animal-scroll-track"></div>
-        </div>
-      </section>
-
-      <section class="section-block">
-        <div class="section-title-wrap">
-          <h3>By Location</h3>
-          <a href="choose.html?mode=state" class="text-link">See all states</a>
-        </div>
-        <p class="helper-text">Pick a top hunting state or open all U.S. states with +.</p>
-
-        <div id="top-states-row" class="top-states-row state-polaroids">
-          <a href="choose.html?mode=state&state=Texas" class="polaroid state-polaroid">
-            <div class="photo" style="background:linear-gradient(135deg, #d4452a 0%, #a0351f 100%)"></div>
-            <div class="caption">Texas</div>
-            <div class="sub">TEXAS</div>
-          </a>
-
-          <a href="choose.html?mode=state&state=Colorado" class="polaroid state-polaroid">
-            <div class="photo" style="background:linear-gradient(135deg, #c73d1f 0%, #8b2a15 100%)"></div>
-            <div class="caption">Colorado</div>
-            <div class="sub">COLORADO</div>
-          </a>
-
-          <a href="choose.html?mode=state&state=Wyoming" class="polaroid state-polaroid">
-            <div class="photo" style="background:linear-gradient(135deg, #d95a2a 0%, #9d3a1a 100%)"></div>
-            <div class="caption">Wyoming</div>
-            <div class="sub">WYOMING</div>
-          </a>
-        </div>
-      </section>
-    </main>
-
-    <dialog id="all-states-dialog" class="state-dialog">
-      <div class="dialog-head">
-        <h4>All U.S. States</h4>
-        <button id="close-states-dialog" class="ghost-btn" aria-label="Close">✕</button>
-      </div>
-      <div id="all-states-grid" class="all-states-grid"></div>
-    </dialog>
-
-    <script type="module" src="js/app.js"></script>
-  </body>
+    <div class="hero">
+        <h1>Welcome to the Hunting Season Lookup</h1>
+        <p>Your go-to resource for hunting seasons, regulations, and tips!</p>
+    </div>
+    <section class="polaroids">
+        <div class="polaroid"><img src="deer.jpg" alt="Deer"><p>Deer</p></div>
+        <div class="polaroid"><img src="moose.jpg" alt="Moose"><p>Moose</p></div>
+        <div class="polaroid"><img src="elk.jpg" alt="Elk"><p>Elk</p></div>
+        <div class="polaroid"><img src="bear.jpg" alt="Bear"><p>Bear</p></div>
+    </section>
+    <section class="states">
+        <div class="state-tile">Texas</div>
+        <div class="state-tile">Colorado</div>
+        <div class="state-tile">Wyoming</div>
+    </section>
+</body>
 </html>
