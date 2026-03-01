@@ -1,0 +1,33 @@
+{
+  "animals": [
+    {
+      "name": "Elk",
+      "image": "assets/animals/elk.jpg",
+      "seasonMonths": ["September", "October"]
+    },
+    {
+      "name": "Whitetail Deer",
+      "image": "assets/animals/deer.jpg",
+      "seasonMonths": ["November", "December"]
+    },
+    {
+      "name": "Turkey",
+      "image": "assets/animals/turkey.jpg",
+      "seasonMonths": ["April", "May"]
+    }
+  ],
+  "locations": [
+    {
+      "name": "Texas",
+      "image": "assets/maps/texas.jpg"
+    },
+    {
+      "name": "Wyoming",
+      "image": "assets/maps/wyoming.jpg"
+    },
+    {
+      "name": "Colorado",
+      "image": "assets/maps/colorado.jpg"
+    }
+  ]
+}
