@@ -1,8 +1,8 @@
 :root {
-  --parchment: #efe3c7;
-  --dark: #2e2a23;
-  --accent: #8b2e1e;
-  --text: #3b3428;
+  --parchment-base: #e8dcc2;
+  --ink-dark: #2b241c;
+  --accent-red: #8b2e1e;
+  --shadow-deep: rgba(0,0,0,0.45);
 }
 
 * {
@@ -13,92 +13,149 @@
 
 body {
   font-family: 'Lora', serif;
-  background: url('assets/textures/parchment.jpg');
+  background:
+    radial-gradient(circle at center, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 100%),
+    url('assets/textures/parchment.jpg');
   background-size: cover;
-  color: var(--text);
+  background-attachment: fixed;
+  color: var(--ink-dark);
   line-height: 1.6;
 }
 
+/* HERO */
+
 .hero {
   text-align: center;
-  padding: 4rem 1rem 3rem;
-  background: rgba(0,0,0,0.6);
-  color: #f5f1e6;
+  padding: 5rem 1rem 4rem;
+  background:
+    url('assets/textures/dark-band.jpg');
+  background-size: cover;
+  color: #f3ead7;
+  box-shadow: inset 0 -10px 40px rgba(0,0,0,0.6);
 }
 
 .logo {
-  width: 220px;
+  width: 240px;
   margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
+  font-size: 3.5rem;
   letter-spacing: 1px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
 }
 
 .subtitle {
   margin-top: 1rem;
   font-style: italic;
+  opacity: 0.9;
 }
 
+/* SECTIONS */
+
 .section {
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   max-width: 1200px;
   margin: auto;
   text-align: center;
 }
 
 .dark-band {
-  background: rgba(0,0,0,0.75);
-  color: #f5f1e6;
+  background:
+    linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+    url('assets/textures/dark-band.jpg');
+  background-size: cover;
+  color: #f3ead7;
 }
 
 h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   margin-bottom: 3rem;
+  letter-spacing: 1px;
 }
+
+/* CARD GRID */
 
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
+  gap: 3rem;
 }
 
+/* POLAROID CARD */
+
 .card {
-  background: url('assets/textures/paper.jpg');
-  background-size: cover;
-  padding: 1rem;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  position: relative;
+  background:
+    linear-gradient(#f7f2e6, #efe6d3);
+  padding: 1rem 1rem 2rem;
+  box-shadow:
+    0 15px 35px var(--shadow-deep);
+  transform: rotate(-2deg);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:nth-child(2n) {
+  transform: rotate(1.5deg);
+}
+
+.card:nth-child(3n) {
   transform: rotate(-1deg);
-  transition: transform 0.2s ease;
 }
 
 .card:hover {
-  transform: rotate(0deg) scale(1.03);
+  transform: rotate(0deg) scale(1.05);
+  box-shadow:
+    0 25px 50px rgba(0,0,0,0.6);
 }
+
+/* TAPE EFFECT */
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 80px;
+  height: 25px;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+/* IMAGE */
 
 .card img {
   width: 100%;
-  height: 220px;
+  height: 230px;
   object-fit: cover;
   margin-bottom: 1rem;
+  border: 8px solid #f7f2e6;
 }
+
+/* TEXT */
 
 .card h3 {
   font-family: 'Playfair Display', serif;
-  color: var(--accent);
-  font-size: 1.5rem;
+  color: var(--accent-red);
+  font-size: 1.6rem;
+  margin-top: 0.5rem;
 }
 
 .card p {
   font-size: 0.9rem;
   margin-top: 0.5rem;
+  opacity: 0.85;
 }
 
+/* RESOURCES */
+
 .resources {
-  border-top: 3px solid rgba(0,0,0,0.3);
+  border-top: 4px solid rgba(0,0,0,0.3);
+  padding-bottom: 6rem;
 }
 
 .resource-links {
@@ -110,5 +167,22 @@ h2 {
 
 .resource-links a {
   text-decoration: none;
-  color: var(--accent);
+  color: var(--accent-red);
+  position: relative;
+}
+
+.resource-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-red);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.resource-links a:hover::after {
+  transform: scaleX(1);
 }
